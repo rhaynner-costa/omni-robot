@@ -67,6 +67,7 @@ omni-robot/
 - **Um teste por vez**: testes são codificados individualmente com aprovação.
 - **Tags**: todos os testes possuem tags para organização e execução seletiva.
 - **Comentários**: apenas quando o "porquê" não é óbvio pelo código.
+- **Fluxo de solicitações**: A IA primeiro vai **entender a solicitação**, apresentar a **sugestão de implementação** explicando de forma **objetiva e concisa**, e somente vai iniciar a **codificação após aprovação do usuário**.
 
 ---
 

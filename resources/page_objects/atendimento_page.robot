@@ -63,3 +63,10 @@ Tela De Negociacao Deve Estar Visivel
 
 Selecionar Pagamento Dinheiro
     Click    ${NEGOCIACAO_BTN_DINHEIRO}
+
+Selecionar Forma Pagamento
+    [Arguments]    ${forma_pagamento}
+    ${forma_normalizada}=    Evaluate    '${forma_pagamento}'.lower().capitalize()
+    ${locator}=    Set Variable    //*[@AutomationId='PagamentoPedidoVendaFrame${forma_normalizada}']
+    Wait Until Element Exist    ${locator}
+    Click    ${locator}
