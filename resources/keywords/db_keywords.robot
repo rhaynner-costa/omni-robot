@@ -21,3 +21,11 @@ Obter Numero Pre Venda Disponivel
     Disconnect From Database
     ${numero}=    Set Variable    ${result[0][0]}
     RETURN    ${numero}
+
+Obter Id Retaguarda
+    [Arguments]    ${numero_atendimento}
+    Connect To Database    psycopg2    ${DB_NAME}    ${DB_USER}    ${DB_PASSWORD}    ${DB_HOST}    ${DB_PORT}
+    ${result}=    Query    SELECT id_retaguarda FROM pre_venda WHERE numero = '${numero_atendimento}' AND situacao_pre_venda = 'RESGATADA'
+    Disconnect From Database
+    ${id_retaguarda}=    Set Variable    ${result[0][0]}
+    RETURN    ${id_retaguarda}

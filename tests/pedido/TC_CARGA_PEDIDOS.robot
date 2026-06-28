@@ -3,11 +3,12 @@ Documentation    TC - Carga de Pedidos via Planilha de Ciclo de Testes
 Library          Collections
 Resource         ../../resources/keywords/common_keywords.robot
 Resource         ../../resources/keywords/spreadsheet_keywords.robot
+Resource         ../../resources/keywords/db_keywords.robot
 Resource         ../../resources/page_objects/home_page.robot
 Resource         ../../resources/page_objects/atendimento_page.robot
 
-Suite Setup      Run Keywords    Iniciar PDV
-#Suite Teardown   Fechar PDV
+Suite Setup      Run Keywords    Remove File    results/resultados_ciclo_${CICLO_ID}.csv    AND    Iniciar PDV
+Suite Teardown   Fechar PDV
 Test Setup       Voltar Para Home
 
 
@@ -23,6 +24,7 @@ Processar Ciclo De Testes ${CICLO_ID}
     
     # Processar cada caso
     @{falhas}=    Create List
+    @{resultados}=    Create List
 
     FOR    ${caso}    IN    @{casos}
         ${id_cenario}=    Set Variable    ${caso['id_cenario']}
@@ -76,12 +78,19 @@ Processar Ciclo De Testes ${CICLO_ID}
             Confirmar Salvar Atendimento Fim
             Salvar Pedido Sem Digitiar Numero
 
+            ${num_atendimento}=    Obter Numero Pre Venda Disponivel
+            ${resultado}=    Create Dictionary    IdCenário=${id_cenario}    cpfCnpj=${cpf_cnpj}    NumeroAtendimento=${num_atendimento}
+            Append To List    ${resultados}    ${resultado}
             Log    Pedido ${id_cenario} criado com sucesso    console=True
         EXCEPT    AS    ${erro}
             Log    FALHA no cenário ${id_cenario}: ${erro}    level=WARN    console=True
             Append To List    ${falhas}    ${id_cenario}
+            ${resultado}=    Create Dictionary    IdCenário=${id_cenario}    cpfCnpj=${cpf_cnpj}    NumeroAtendimento=FALHA_OBTER_NUMERO
+            Append To List    ${resultados}    ${resultado}
         END
     END
+
+    Escrever Resultados CSV    ${resultados}    ${CICLO_ID}
 
     IF    len($falhas) > 0
         Fail    Casos com falha: @{falhas}

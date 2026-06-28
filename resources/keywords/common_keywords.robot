@@ -27,7 +27,12 @@ Fechar PDV
 Voltar Para Home
     Click    ${MENU_BTN_ABRIR_NAVEGACAO}
     Click    ${MENU_ITEM_HOME}
-    Tela Home Deve Estar Visivel 
+    Tela Home Deve Estar Visivel
+
+Voltar Para Home Venda
+    Click    ${MENU_BTN_ABRIR_NAVEGACAO}
+    Click    ${MENU_ITEM_HOME}
+    Tela Home Venda Deve Estar Visivel
 
 Iniciar PDV
     [Arguments]    ${usuario}=${PDV_USUARIO}    ${senha}=${PDV_SENHA}
