@@ -88,6 +88,11 @@ omni-robot/
 - Alterações ocorrem **somente no escopo exato do que foi solicitado** — nenhuma linha além do necessário.
 - Arquivos não mencionados na solicitação **não são tocados**.
 
+### Preservação de código existente
+- A IA **nunca modifica** código que já está funcionando, mesmo que identifique melhorias de formatação, estilo ou organização.
+- Alterações ocorrem **somente no escopo exato do que foi solicitado** — nenhuma linha além do necessário.
+- Arquivos não mencionados na solicitação **não são tocados**.
+
 ### Banco de dados
 - Conexão via `DatabaseLibrary` com `Connect To Database    psycopg2`.
 - Banco do projeto: `TotvsPDV` (não `postgres`).
