@@ -7,7 +7,7 @@ Resource         ../../resources/keywords/db_keywords.robot
 Resource         ../../resources/page_objects/home_page.robot
 Resource         ../../resources/page_objects/atendimento_page.robot
 
-Suite Setup      Run Keywords    Remove File    results/resultados_ciclo_${CICLO_ID}.csv    AND    Iniciar PDV
+Suite Setup      Run Keywords   Configurar Modo Pedido    AND     Remove File    results/resultados_ciclo_${CICLO_ID}.csv    AND   Iniciar PDV
 Suite Teardown   Fechar PDV
 Test Setup       Voltar Para Home
 
