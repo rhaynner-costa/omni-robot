@@ -67,6 +67,7 @@ omni-robot/
 - **Um teste por vez**: testes são codificados individualmente com aprovação.
 - **Tags**: todos os testes possuem tags para organização e execução seletiva.
 - **Comentários**: apenas quando o "porquê" não é óbvio pelo código.
+- **Fluxo de solicitações**: A IA primeiro vai **entender a solicitação**, apresentar a **sugestão de implementação** explicando de forma **objetiva e concisa**, e somente vai iniciar a **codificação após aprovação do usuário**.
 
 ---
 
@@ -81,6 +82,16 @@ omni-robot/
 ### Estrutura de arquivos
 - **Locators nunca em page objects.** Variáveis XPath/AutomationId pertencem exclusivamente a `resources/locators/`.
 - Page objects (`resources/page_objects/`) contêm apenas `*** Keywords ***`, sem `*** Variables ***`.
+
+### Preservação de código existente
+- A IA **nunca modifica** código que já está funcionando, mesmo que identifique melhorias de formatação, estilo ou organização.
+- Alterações ocorrem **somente no escopo exato do que foi solicitado** — nenhuma linha além do necessário.
+- Arquivos não mencionados na solicitação **não são tocados**.
+
+### Preservação de código existente
+- A IA **nunca modifica** código que já está funcionando, mesmo que identifique melhorias de formatação, estilo ou organização.
+- Alterações ocorrem **somente no escopo exato do que foi solicitado** — nenhuma linha além do necessário.
+- Arquivos não mencionados na solicitação **não são tocados**.
 
 ### Banco de dados
 - Conexão via `DatabaseLibrary` com `Connect To Database    psycopg2`.

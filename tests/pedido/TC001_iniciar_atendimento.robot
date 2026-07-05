@@ -2,7 +2,6 @@
 Documentation    TC001 - Iniciar atendimento, buscar cliente por CPF e adicionar produto
 Resource         ../../resources/keywords/common_keywords.robot
 Resource         ../../resources/keywords/db_keywords.robot
-Resource         ../../resources/page_objects/home_page.robot
 Resource         ../../resources/page_objects/atendimento_page.robot
 
 Suite Setup      Run Keywords    Configurar Modo Pedido    AND    Iniciar PDV

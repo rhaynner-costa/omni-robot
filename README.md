@@ -66,6 +66,31 @@ robot -d results tests/pedido/TC001_iniciar_atendimento.robot
 robot -d results tests/venda/TC001_venda.robot
 ```
 
+### Carga de Pedidos via Planilha (TC_CARGA_PEDIDOS)
+
+Ferramenta para criar pedidos em massa a partir de dados em arquivo XLSX.
+
+**Estrutura da Planilha:**
+```
+IdCenário | cpfCnpj | idRetaguarda_1 | tipoEntrega_1 | idRetaguarda_2 | tipoEntrega_2 | formaPagamento
+```
+
+**Exemplo de arquivo:** `resources/data/ciclo_de_testes_369.xlsx`
+
+**Comando de execução:**
+
+```bash
+# Rodar carga de pedidos com ciclo específico
+robot -d results -v CICLO_ID:369 tests/pedido/TC_CARGA_PEDIDOS.robot
+
+# Com outros ciclos
+robot -d results -v CICLO_ID:470 tests/pedido/TC_CARGA_PEDIDOS.robot
+```
+
+**Parâmetros:**
+- `-v CICLO_ID:369` → ID do ciclo de testes (busca arquivo `ciclo_de_testes_369.xlsx`)
+- `-d results` → Diretório de saída dos relatórios
+
 ### Rodar jornada completa (pedido + venda em sequência)
 
 ```bash

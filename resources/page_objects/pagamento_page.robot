@@ -13,7 +13,7 @@ Finalizar Pagamento
     Click    ${PAGAMENTO_BTN_FINALIZAR}
 
 Confirmar Forma De Pagamento
-    Wait Until Element Is Enabled    ${MODAL_CONFIRMACAO_BTN_CONFIRMAR}    20
+    Wait Until Element Is Enabled    ${MODAL_CONFIRMACAO_BTN_CONFIRMAR}
     Click    ${MODAL_CONFIRMACAO_BTN_CONFIRMAR}
 
 Confirmar Impressao Documento
