@@ -11,14 +11,15 @@ Resource    ../page_objects/home_page.robot
 *** Keywords ***
 Obter PID Do PDV
     ${result}=    Run Process    powershell    -Command    (Get-Process -Name '${APP_PROCESS}').Id    shell=True
-    ${pid}=       Convert To Integer    ${result.stdout.strip()}
+    ${pid_str}=    Set Variable    ${result.stdout.strip()}
+    Should Not Be Empty    ${pid_str}    msg=Processo ${APP_PROCESS}.exe ainda nao iniciou.
+    ${pid}=       Convert To Integer    ${pid_str}
     RETURN        ${pid}
 
 Abrir PDV OMNI
     Run Keyword And Ignore Error    OperatingSystem.Run    taskkill /f /im ${APP_PROCESS}.exe
-    Run Process    powershell    -Command    Start-Process 'shell:AppsFolder\\cab27191-0e0a-428d-9e66-80685c4e7393_8hxjckwd6myx4!App'    shell=True
-    Sleep    6s
-    ${pid}=    Obter PID Do PDV
+    Run Process    powershell    -Command    Start-Process '${APP_ARGS}'    shell=True
+    ${pid}=    Wait Until Keyword Succeeds    ${LONG_TIMEOUT}    2s    Obter PID Do PDV
     Attach Application By PID    ${pid}
 
 Fechar PDV

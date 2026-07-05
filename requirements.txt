@@ -8,3 +8,4 @@ python-dotenv
 robotframework-csvlibrary
 pywin32
 pywinauto
+pyautogui
