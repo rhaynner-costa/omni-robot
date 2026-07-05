@@ -1,7 +1,8 @@
 *** Variables ***
 # Aplicação
 ${APP_PATH}         C:\\Windows\\explorer.exe
-${APP_ARGS}         shell:AppsFolder\\cab27191-0e0a-428d-9e66-80685c4e7393_8hxjckwd6myx4!App
+#${APP_ARGS}         shell:AppsFolder\\cab27191-0e0a-428d-9e66-80685c4e7393_8hxjckwd6myx4!App  -- pdv rhaynner
+${APP_ARGS}         shell:AppsFolder\cab27191-0e0a-428d-9e66-80685c4e7393_gnw0466hkgph6!App
 ${APP_TITLE}        PDV OMNI
 ${APP_PROCESS}      TOTVS.PDV.Omnishop
 
