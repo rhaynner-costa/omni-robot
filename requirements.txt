@@ -1,2 +1,3 @@
 robotframework>=7.0
 robotframework-flaui>=2.0.0
+robotframework-databaselibrary
