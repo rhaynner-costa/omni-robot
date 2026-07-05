@@ -3,3 +3,8 @@ robotframework-flaui>=2.0.0
 robotframework-databaselibrary
 psycopg2-binary
 openpyxl
+robotframework-datadriver
+python-dotenv
+robotframework-csvlibrary
+pywin32
+pywinauto
