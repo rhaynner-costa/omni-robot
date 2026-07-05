@@ -4,7 +4,6 @@ Library          Collections
 Resource         ../../resources/keywords/common_keywords.robot
 Resource         ../../resources/keywords/spreadsheet_keywords.robot
 Resource         ../../resources/keywords/db_keywords.robot
-Resource         ../../resources/page_objects/home_page.robot
 Resource         ../../resources/page_objects/prevenda_page.robot
 Resource         ../../resources/page_objects/pagamento_page.robot
 
