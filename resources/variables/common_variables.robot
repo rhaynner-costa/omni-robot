@@ -10,7 +10,7 @@ ${PDV_USUARIO}      19
 ${PDV_SENHA}        1
 
 # Dispositivo
-${ID_DEVICE}        GON170102537
+${ID_DEVICE}        GOISRVAPLHOM017
 
 # Timeouts
 ${TIMEOUT}          15s
